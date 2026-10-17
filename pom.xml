@@ -44,14 +44,16 @@
         <!-- Dependency versions -->
         <revision>2.0.x.20260630-SNAPSHOT</revision>
         <commons-lang3.version>3.20.0</commons-lang3.version>
-        <easy4j-shiro-extension.version>3.0.x.20260630-SNAPSHOT</easy4j-shiro-extension.version>
+        <easy4j-shiro-extension.version>2.0.x.20260630-SNAPSHOT</easy4j-shiro-extension.version>
         <fastjson.version>2.0.62</fastjson.version>
         <guava.version>33.6.0-jre</guava.version>
         <jackson-bom.version>3.2.1</jackson-bom.version>
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
         <lombok.version>1.18.46</lombok.version>
+        <scribejava.version>8.3.3</scribejava.version>
         <shiro.version>2.2.1</shiro.version>
         <slf4j.version>2.0.18</slf4j.version>
+        <spring-boot.version>2.7.18</spring-boot.version>
         <spring.version>5.3.30</spring.version>
         <!-- Maven Plugin versions -->
         <maven-central-publishing-plugin.version>0.11.0</maven-central-publishing-plugin.version>
@@ -111,6 +113,16 @@
                 <version>${guava.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.github.scribejava</groupId>
+                <artifactId>scribejava-core</artifactId>
+                <version>${scribejava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
@@ -119,6 +131,11 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-web</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${spring-boot.version}</version>
             </dependency>
             <dependency>
                 <groupId>javax.servlet</groupId>
