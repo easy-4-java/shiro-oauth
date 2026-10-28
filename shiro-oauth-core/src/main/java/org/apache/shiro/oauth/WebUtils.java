@@ -2,14 +2,14 @@ package org.apache.shiro.oauth;
 
 import java.io.IOException;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Local WebUtils replacement for Shiro compatibility.
- * Uses javax.servlet to match Shiro's API.
+ * Uses jakarta.servlet to match Shiro's API.
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 1.0.0
  */
