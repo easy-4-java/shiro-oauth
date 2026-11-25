@@ -1,7 +1,7 @@
 package org.apache.shiro.oauth;
 
 import java.lang.reflect.Proxy;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

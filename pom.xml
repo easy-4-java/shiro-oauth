@@ -50,12 +50,12 @@
         <fastjson.version>2.0.62</fastjson.version>
         <guava.version>33.6.0-jre</guava.version>
         <jackson-bom.version>3.2.1</jackson-bom.version>
-        <jakarta-servlet-api.version>6.1.0</jakarta-servlet-api.version>
+        <servlet-api.version>6.1.0</servlet-api.version>
         <junit-jupiter.version>6.1.0</junit-jupiter.version>
         <lombok.version>1.18.46</lombok.version>
-        <shiro.version>3.0.1</shiro.version>
+        <shiro.version>3.0.2</shiro.version>
         <slf4j.version>2.0.18</slf4j.version>
-        <spring.version>7.0.8</spring.version>
+        <spring.version>7.0.10</spring.version>
         <!-- Maven Plugin versions -->
         <maven-central-publishing-plugin.version>0.11.0</maven-central-publishing-plugin.version>
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
@@ -65,10 +65,18 @@
         <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
         <scribejava.version>8.3.3</scribejava.version>
-        <spring-boot.version>4.0.8</spring-boot.version>
+        <spring-boot.version>4.0.9</spring-boot.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <!-- 统一 Spring 传递依赖，避免 Shiro 引入其他版本线。 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>tools.jackson</groupId>
                 <artifactId>jackson-bom</artifactId>
@@ -129,7 +137,7 @@
             <dependency>
                 <groupId>jakarta.servlet</groupId>
                 <artifactId>jakarta.servlet-api</artifactId>
-                <version>${jakarta-servlet-api.version}</version>
+                <version>${servlet-api.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
