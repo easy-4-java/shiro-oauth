@@ -47,14 +47,14 @@
         <easy4j-shiro-extension.version>2.0.x.20260630-SNAPSHOT</easy4j-shiro-extension.version>
         <fastjson.version>2.0.62</fastjson.version>
         <guava.version>33.6.0-jre</guava.version>
-        <jackson-bom.version>3.2.1</jackson-bom.version>
-        <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
+        <jackson-bom.version>2.22.3</jackson-bom.version>
+        <servlet-api.version>6.0.0</servlet-api.version>
         <lombok.version>1.18.46</lombok.version>
         <scribejava.version>8.3.3</scribejava.version>
-        <shiro.version>2.2.1</shiro.version>
+        <shiro.version>3.0.2</shiro.version>
         <slf4j.version>2.0.18</slf4j.version>
-        <spring-boot.version>2.7.18</spring-boot.version>
-        <spring.version>5.3.30</spring.version>
+        <spring-boot.version>3.5.16</spring-boot.version>
+        <spring.version>6.2.19</spring.version>
         <!-- Maven Plugin versions -->
         <maven-central-publishing-plugin.version>0.11.0</maven-central-publishing-plugin.version>
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
@@ -65,8 +65,16 @@
     </properties>
     <dependencyManagement>
         <dependencies>
+            <!-- 统一 Spring 传递依赖，避免 Shiro 引入其他版本线。 -->
             <dependency>
-                <groupId>tools.jackson</groupId>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
                 <artifactId>jackson-bom</artifactId>
                 <version>${jackson-bom.version}</version>
                 <type>pom</type>
@@ -138,9 +146,9 @@
                 <version>${spring-boot.version}</version>
             </dependency>
             <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>${javax-servlet-api.version}</version>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
